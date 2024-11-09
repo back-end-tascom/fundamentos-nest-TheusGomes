@@ -1,6 +1,6 @@
 // src/student/student.service.ts
 import { Injectable } from '@nestjs/common';
-import { Student } from '../student.entity';
+import { Student } from './student.entity';
 
 @Injectable()
 export class StudentService {

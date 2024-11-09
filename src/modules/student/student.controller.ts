@@ -1,7 +1,7 @@
 // src/student/student.controller.ts
 import { Controller, Get, Post, Param, Body, Put, Delete } from '@nestjs/common';
 import { StudentService } from './student.service';
-import { Student } from '../../student.entity';
+import { Student } from './student.entity';
 
 
 @Controller('students')
@@ -10,13 +10,13 @@ export class StudentController {
 
   // Endpoint para adicionar um novo estudante
   @Post()
-  addStudent(@Body() body: { name: string, age: number, course: string }): Student {
+  createStudent(@Body() body: { name: string, age: number, course: string }): Student {
     return this.studentService.addStudent(body.name, body.age, body.course);
   }
 
   // Endpoint para obter todos os estudantes
   @Get()
-  getStudents(): Student[] {
+  getAllStudents(): Student[] {
     return this.studentService.getStudents();
   }
 
